@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-const API_URL = 'http://localhost:3200/api/test/';
+const API_URL = 'https://myphillipi.herokuapp.com/api/test/';
 
 let token = window.sessionStorage.getItem('auth-token')
 
@@ -18,11 +18,11 @@ let httpOptions = {
      { responseType: 'text' });
   }
   getUserBoard(): Observable<any> {
-    return this.http.get(API_URL + 'user', 
+    return this.http.get(API_URL + 'user',
     { responseType: 'text' });
   }
   getModeratorBoard(): Observable<any> {
-    return this.http.get(API_URL + 'mod', 
+    return this.http.get(API_URL + 'mod',
     { responseType: 'text' });
   }
   getAdminBoard(): Observable<any> {
